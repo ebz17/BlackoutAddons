@@ -1,0 +1,66 @@
+{
+  // Master switch
+  "enabled": true,
+
+  // Chance (0-100) that Wedge spawns on a Labs raid where Blackout rolled a BLACKOUT
+  "wedgeChance": 100,
+
+  // Number of Black Division guards escorting Wedge (random between min and max)
+  "minGuards": 4,
+  "maxGuards": 4,
+
+  // Labs zones the Wedge group can spawn in
+  "spawnZones": "BotZoneFloor2,BotZoneFloor1,BotZoneBasement",
+
+  // Wedge + guards start in the basement generator room (they caused the blackout),
+  // then move out and hunt. Needs the Blackout Power Restore client mod.
+  // false = they use spawnZones above.
+  "spawnInGeneratorRoom": true,
+
+  // Wedge always carries Blackout's key (it opens the locked door to the room with the gate switch
+  // and the code whiteboard). Kill him to get it. Blackout's own key on the desk stays too.
+  "wedgeCarriesKey": true,
+
+  // Each Black Division soldier (not Wedge) has this chance (0-100) of a Labs keycard in his pockets.
+  // Includes the second wave from the Blackout Power Restore client mod. 0 = off.
+  "keycardChance": 25,
+
+  // Which keycards, and how common each one is (higher = more common)
+  "keycards": {
+    "5c94bbff86f7747ee735c08f": 30, // Labs access keycard
+    "5c1d0dc586f7744baf2e7b79": 18, // green
+    "5c1d0d6d86f7744bb2683e1f": 18, // yellow
+    "5c1d0c5f86f7744bb2683cf0": 14, // blue
+    "5c1e495a86f7743109743dfb": 10, // violet
+    "5c1d0efb86f7744baf2e7b7b": 5,  // red
+    "5c1d0f4986f7744bb01837fa": 5   // black
+  },
+
+  // Killa comes in through the sewage conduit (basement) in blackout raids.
+  // Needs the Blackout Power Restore client mod for the exact spot (without it: somewhere in the basement).
+  "killaEnabled": true,
+  "killaChance": 100,
+  // "vengeful" = Vengeful Killa (Shadow of Tagilla's partner: 960 HP, RPK), "killa" = normal Killa
+  "killaType": "vengeful",
+  // Surprise final boss: Killa breaks in once Black Division is wiped out (backup time in the client mod config).
+  // false = he comes at a random time between the two values below.
+  "killaAfterBlackDivision": true,
+  // Only used when killaAfterBlackDivision is false: random time between these (minutes after the raid starts)
+  "killaMinMinutes": 5,
+  "killaMaxMinutes": 20,
+  // Tagilla comes in with Killa and guards the sewage exit (needs killaAfterBlackDivision: true)
+  "tagillaEnabled": true,
+  "tagillaChance": 100,
+  // "shadow" = Shadow of Tagilla (Labyrinth boss: faster, quieter, much tougher), "tagilla" = normal Tagilla
+  "tagillaType": "shadow",
+
+  // Spawn the Wedge group even if Labs is already at its bot cap
+  "ignoreMaxBots": true,
+
+  // true  = Wedge ONLY shows up during blackouts
+  // false = Black Division still rolls its own random Labs Wedge (labsStartChance) on normal raids
+  "wedgeOnlyDuringBlackout": false,
+
+  // Extra console logging
+  "debug": false
+}

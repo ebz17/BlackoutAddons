@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>BlackoutBlackDivision</AssemblyName>
+    <RootNamespace>BlackoutBlackDivision</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Version>1.0.0</Version>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="SPTarkov.Server.Core" Version="4.1.1" ExcludeAssets="runtime" PrivateAssets="all" />
+    <PackageReference Include="SPTarkov.DI" Version="4.1.1" ExcludeAssets="runtime" PrivateAssets="all" />
+    <PackageReference Include="SPTarkov.Common" Version="4.1.1" ExcludeAssets="runtime" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Blackout server DLL: compile-time only, the real one is loaded from user/mods/Blackout -->
+    <Reference Include="BlackoutServer">
+      <HintPath>lib/BlackoutServer.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="config.jsonc" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
